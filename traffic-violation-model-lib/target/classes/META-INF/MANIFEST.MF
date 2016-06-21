@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: traffic-violation-project:traffic-violation-mode
+ l-lib
+Implementation-Version: pc-SNAPSHOT
+Implementation-Vendor-Id: org.pc.trafficviolation
+Build-Jdk: 1.6.0_45
+Built-By: fenggwei
+Created-By: Maven Integration for Eclipse
+

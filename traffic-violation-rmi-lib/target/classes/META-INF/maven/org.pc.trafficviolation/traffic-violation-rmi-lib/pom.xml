@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.pc.trafficviolation</groupId>
+		<artifactId>traffic-violation-parent</artifactId>
+		<version>pc-SNAPSHOT</version>
+		<relativePath>../traffic-violation-parent/</relativePath>
+	</parent>
+
+	<artifactId>traffic-violation-rmi-lib</artifactId>
+	<packaging>jar</packaging>
+	<name>traffic-violation-project:traffic-violation-rmi-lib</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>traffic-violation-common</artifactId>
+			<version>${repo-internal-version}</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>traffic-violation-rmi-lib</finalName>
+	</build>
+	
+</project>

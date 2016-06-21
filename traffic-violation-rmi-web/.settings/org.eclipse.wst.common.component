@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="traffic-violation-rmi-web">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="traffic-violation-common-pc-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/traffic-violation-common/traffic-violation-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="traffic-violation-model-lib-pc-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/traffic-violation-model-lib/traffic-violation-model-lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="traffic-violation-rmi-web"/>
+        <property name="java-output-path" value="/traffic-violation-rmi-web/target/classes"/>
+    </wb-module>
+</project-modules>

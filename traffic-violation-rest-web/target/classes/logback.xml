@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+    
+     <property name="contextName" value="traffic-violation-web" />  
+     
+    <contextName>${contextName}</contextName>
+    
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{ISO8601} [%thread] %-5level %X{logtraceid} %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="TraceLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>trace.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>trace.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{ISO8601} [%thread] %X{logtraceid} %X{componentName} %X{operationType} %X{result} %X{requestStartTime} %X{responseEndTime} [%X{imsi},%X{vimsi:-},%X{apnsToken:-},%X{sipUserName:-},%X{serviceName:-},%X{status:-},%X{deviceUniqueId:-}] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.pc.trafficviolation" level="DEBUG" additivity="false">
+        <appender-ref ref="Console" />
+        <appender-ref ref="TraceLog" />
+    </logger>
+    
+    <root level="DEBUG">
+        <appender-ref ref="Console" />
+        <appender-ref ref="TraceLog" />
+    </root>
+    
+</configuration>
